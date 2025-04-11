@@ -1,0 +1,512 @@
+/* ================================
+   Mini Framework CSS Personalizado Ampliado
+   ================================= */
+
+/* 1. Reset y Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+/* 2. Tipografía */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+a {
+  color: #3490dc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #2779bd;
+}
+
+/* Utilidades tipográficas */
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+.text-capitalize { text-transform: capitalize; }
+.text-justify { text-align: justify; }
+.text-muted { color: #777; }
+
+/* 3. Botones */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Variantes de botones */
+.btn-primary {
+  background-color: #3490dc;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #2779bd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-secondary {
+  background-color: #ccc;
+  color: #333;
+}
+.btn-secondary:hover {
+  background-color: #b3b3b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-danger {
+  background-color: #e3342f;
+  color: white;
+}
+.btn-danger:hover {
+  background-color: #c51f1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Botones outline y redondeados */
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid currentColor;
+}
+.btn-rounded {
+  border-radius: 50px;
+}
+
+/* Estados adicionales */
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+.btn:disabled,
+.btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 4. Formularios */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #3490dc;
+  outline: none;
+}
+
+/* 5. Contenedores */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 1rem;
+}
+
+/* 6. Espaciado */
+.m-0 { margin: 0 !important; }
+.m-1 { margin: 0.5rem !important; }
+.m-2 { margin: 1rem !important; }
+.mt-0 { margin-top: 0 !important; }
+.mt-1 { margin-top: 0.5rem !important; }
+.mt-2 { margin-top: 1rem !important; }
+.p-0 { padding: 0 !important; }
+.p-1 { padding: 0.5rem !important; }
+.p-2 { padding: 1rem !important; }
+
+/* 7. Utilidades Generales */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-bold { font-weight: bold; }
+.text-italic { font-style: italic; }
+.rounded { border-radius: 5px; }
+.shadow { box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.grid { display: grid; }
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+.overflow-hidden { overflow: hidden; }
+
+/* 8. Componentes adicionales */
+
+/* 8.1. Tarjetas (Cards) */
+.card {
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.card-header,
+.card-footer {
+  padding: 1rem;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+/* 8.2. Navegación (Navbar) */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3490dc;
+  padding: 0.75rem 1rem;
+  color: white;
+  position: relative;
+  z-index: 100;
+}
+
+.navbar a {
+  color: white;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  color: #ffed4a;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Variantes de Navbar */
+.navbar-sticky {
+  position: sticky;
+  top: 0;
+}
+
+/* Menú para dispositivos móviles */
+.navbar-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-toggle {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .navbar-menu {
+    display: none;
+    width: 100%;
+  }
+  .navbar-menu.active {
+    display: block;
+  }
+}
+
+/* 8.3. Modales */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background-color: #fff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  position: relative;
+  animation: modalFadeIn 0.4s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header,
+.modal-footer {
+  padding: 1rem;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.modal-body {
+  padding: 1rem;
+}
+
+/* Botón de cerrar modal */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* 8.4. Alertas */
+.alert {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  color: #fff;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.alert-success {
+  background-color: #38c172;
+}
+
+.alert-warning {
+  background-color: #ffed4a;
+  color: #333;
+}
+
+.alert-danger {
+  background-color: #e3342f;
+}
+
+/* Botón de cerrar alerta */
+.alert .alert-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* 8.5. Tablas */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+/* 8.6. Imágenes y Medios */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 9. Sistema de Grid Responsive */
+/* Contenedor de filas */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+}
+
+/* Columnas básicas */
+[class*="col-"] {
+  padding: 0.5rem;
+  flex: 1;
+}
+
+/* Ejemplo de clases para columnas en un sistema de 12 columnas */
+.col-1 { flex: 0 0 8.33%; max-width: 8.33%; }
+.col-2 { flex: 0 0 16.66%; max-width: 16.66%; }
+.col-3 { flex: 0 0 25%; max-width: 25%; }
+.col-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+.col-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+.col-6 { flex: 0 0 50%; max-width: 50%; }
+.col-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+.col-8 { flex: 0 0 66.66%; max-width: 66.66%; }
+.col-9 { flex: 0 0 75%; max-width: 75%; }
+.col-10 { flex: 0 0 83.33%; max-width: 83.33%; }
+.col-11 { flex: 0 0 91.66%; max-width: 91.66%; }
+.col-12 { flex: 0 0 100%; max-width: 100%; }
+
+/* Clases para offset en el grid */
+.offset-1 { margin-left: 8.33%; }
+.offset-2 { margin-left: 16.66%; }
+.offset-3 { margin-left: 25%; }
+.offset-4 { margin-left: 33.33%; }
+.offset-5 { margin-left: 41.66%; }
+.offset-6 { margin-left: 50%; }
+.offset-7 { margin-left: 58.33%; }
+.offset-8 { margin-left: 66.66%; }
+.offset-9 { margin-left: 75%; }
+.offset-10 { margin-left: 83.33%; }
+.offset-11 { margin-left: 91.66%; }
+
+/* Media Queries para mayor responsividad */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  [class*="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* 10. Animaciones y Transiciones adicionales */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Animación Bounce */
+.bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* 11. Otros Componentes */
+
+/* Tarjeta con acción (hover y clic) */
+.card-action {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.card-action:active {
+  transform: scale(0.98);
+}
+
+/* Tooltip básico */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
