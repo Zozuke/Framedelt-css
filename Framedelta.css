@@ -1,5 +1,6 @@
 /* ================================
    Mini Framework CSS Personalizado Ampliado
+   versión 2.0
    ================================= */
 
 /* 1. Reset y Base */
@@ -59,6 +60,11 @@ a:hover {
 .text-capitalize { text-transform: capitalize; }
 .text-justify { text-align: justify; }
 .text-muted { color: #777; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-bold { font-weight: bold; }
+.text-italic { font-style: italic; }
 
 /* 3. Botones */
 .btn {
@@ -73,7 +79,6 @@ a:hover {
   text-decoration: none;
 }
 
-/* Variantes de botones */
 .btn-primary {
   background-color: #3490dc;
   color: white;
@@ -104,16 +109,15 @@ a:hover {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Botones outline y redondeados */
 .btn-outline {
   background-color: transparent;
   border: 2px solid currentColor;
 }
+
 .btn-rounded {
   border-radius: 50px;
 }
 
-/* Estados adicionales */
 .btn:active {
   transform: translateY(0);
   box-shadow: none;
@@ -181,11 +185,6 @@ select:focus {
 .p-2 { padding: 1rem !important; }
 
 /* 7. Utilidades Generales */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-.text-bold { font-weight: bold; }
-.text-italic { font-style: italic; }
 .rounded { border-radius: 5px; }
 .shadow { box-shadow: 0 0 10px rgba(0,0,0,0.1); }
 .flex { display: flex; }
@@ -195,7 +194,7 @@ select:focus {
 .h-100 { height: 100%; }
 .overflow-hidden { overflow: hidden; }
 
-/* 8. Componentes adicionales */
+/* 8. Componentes */
 
 /* 8.1. Tarjetas (Cards) */
 .card {
@@ -251,13 +250,11 @@ select:focus {
   font-weight: bold;
 }
 
-/* Variantes de Navbar */
 .navbar-sticky {
   position: sticky;
   top: 0;
 }
 
-/* Menú para dispositivos móviles */
 .navbar-toggle {
   display: none;
   cursor: pointer;
@@ -327,7 +324,6 @@ select:focus {
   padding: 1rem;
 }
 
-/* Botón de cerrar modal */
 .modal-close {
   position: absolute;
   top: 10px;
@@ -361,7 +357,6 @@ select:focus {
   background-color: #e3342f;
 }
 
-/* Botón de cerrar alerta */
 .alert .alert-close {
   position: absolute;
   top: 5px;
@@ -396,117 +391,4 @@ select:focus {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-/* 9. Sistema de Grid Responsive */
-/* Contenedor de filas */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -0.5rem;
-}
-
-/* Columnas básicas */
-[class*="col-"] {
-  padding: 0.5rem;
-  flex: 1;
-}
-
-/* Ejemplo de clases para columnas en un sistema de 12 columnas */
-.col-1 { flex: 0 0 8.33%; max-width: 8.33%; }
-.col-2 { flex: 0 0 16.66%; max-width: 16.66%; }
-.col-3 { flex: 0 0 25%; max-width: 25%; }
-.col-4 { flex: 0 0 33.33%; max-width: 33.33%; }
-.col-5 { flex: 0 0 41.66%; max-width: 41.66%; }
-.col-6 { flex: 0 0 50%; max-width: 50%; }
-.col-7 { flex: 0 0 58.33%; max-width: 58.33%; }
-.col-8 { flex: 0 0 66.66%; max-width: 66.66%; }
-.col-9 { flex: 0 0 75%; max-width: 75%; }
-.col-10 { flex: 0 0 83.33%; max-width: 83.33%; }
-.col-11 { flex: 0 0 91.66%; max-width: 91.66%; }
-.col-12 { flex: 0 0 100%; max-width: 100%; }
-
-/* Clases para offset en el grid */
-.offset-1 { margin-left: 8.33%; }
-.offset-2 { margin-left: 16.66%; }
-.offset-3 { margin-left: 25%; }
-.offset-4 { margin-left: 33.33%; }
-.offset-5 { margin-left: 41.66%; }
-.offset-6 { margin-left: 50%; }
-.offset-7 { margin-left: 58.33%; }
-.offset-8 { margin-left: 66.66%; }
-.offset-9 { margin-left: 75%; }
-.offset-10 { margin-left: 83.33%; }
-.offset-11 { margin-left: 91.66%; }
-
-/* Media Queries para mayor responsividad */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  [class*="col-"] {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-}
-
-/* 10. Animaciones y Transiciones adicionales */
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Animación Bounce */
-.bounce {
-  animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-10px); }
-  60% { transform: translateY(-5px); }
-}
-
-/* 11. Otros Componentes */
-
-/* Tarjeta con acción (hover y clic) */
-.card-action {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.card-action:active {
-  transform: scale(0.98);
-}
-
-/* Tooltip básico */
-.tooltip {
-  position: relative;
-  cursor: pointer;
-}
-
-.tooltip .tooltip-text {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  background-color: #333;
-  color: #fff;
-  padding: 0.5rem;
-  border-radius: 4px;
-  top: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  transition: opacity 0.3s ease;
-  z-index: 10;
-}
-
-.tooltip:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
 }
